@@ -1048,7 +1048,7 @@ SpriteMorph.prototype.initBlocks = function () {
             defaults: [null, "Abelson & Sussman"]
         },
 
-    /*
+    
         reportScript: {
             type: 'reporter',
             category: 'operators',
@@ -1059,7 +1059,7 @@ SpriteMorph.prototype.initBlocks = function () {
             category: 'operators',
             spec: 'the %f block %parms'
         },
-    */
+    
 
         // Variables
         doSetVar: {
