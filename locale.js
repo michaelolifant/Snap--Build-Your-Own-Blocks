@@ -569,3 +569,15 @@ SnapTranslator.dict.gl = {
     'last_changed':
         '2016-11-09'
 };
+SnapTranslator.dict.klingon = {
+
+    // translations meta information
+    'language_name':
+        'tlhIngan', // the name as it should appear in the language menu
+    'language_translator':
+        'Mike', // your name for the Translators tab
+    'translator_e-mail':
+        '',
+    'last_changed':
+        '2017-03-02', // this, too, will appear in the Translators tab
+};
