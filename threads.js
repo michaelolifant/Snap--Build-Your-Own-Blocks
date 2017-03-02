@@ -1117,11 +1117,11 @@ Process.prototype.fork = function (context, args) {
 
 Process.prototype.initializeFor = function (context, args) {
     // used by Process.fork() and global invoke()
-    if (context.isContinuation) {
+    /*if (context.isContinuation) {
         throw new Error(
             'continuations cannot be forked'
         );
-    }
+    }*/
     if (!(context instanceof Context)) {
         throw new Error('expecting a ring but getting ' + context);
     }
@@ -3054,6 +3054,20 @@ Process.prototype.doSet = function (attribute, value) {
         this.assertType(value, 'number');
         rcvr.setRotationY(value);
         break;
+    case 'name':
+        this.assertType(rcvr, 'sprite');
+        rcvr.setName(value);
+        break;
+    case 'center x':
+        this.assertType(rcvr, 'sprite');
+        this.assertType(value, 'number');
+        rcvr.setCenter(new Point(rcvr.xCenter(),value));
+        break;
+    case 'center y':
+        this.assertType(rcvr, 'sprite');
+        this.assertType(value, 'number');
+        rcvr.setCenter(new Point(value, rcvr.yCenter()));
+        break;  
     default:
         throw new Error(
             '"' + localize(name) + '" ' + localize('is read-only')
