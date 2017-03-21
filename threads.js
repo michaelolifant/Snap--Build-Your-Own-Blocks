@@ -1117,11 +1117,11 @@ Process.prototype.fork = function (context, args) {
 
 Process.prototype.initializeFor = function (context, args) {
     // used by Process.fork() and global invoke()
-    /*if (context.isContinuation) {
+    if (context.isContinuation) {
         throw new Error(
             'continuations cannot be forked'
         );
-    }*/
+    }
     if (!(context instanceof Context)) {
         throw new Error('expecting a ring but getting ' + context);
     }
