@@ -182,7 +182,7 @@ var ScriptFocusMorph;
 WorldMorph.prototype.customMorphs = function () {
     // add examples to the world's demo menu
 
-    return [];
+    //return [];
 
 /*
     return [
@@ -195,7 +195,7 @@ WorldMorph.prototype.customMorphs = function () {
         )
     ];
 */
-/*
+
     var sm = new ScriptsMorph();
     sm.setExtent(new Point(800, 600));
 
@@ -225,7 +225,7 @@ WorldMorph.prototype.customMorphs = function () {
         new RingReporterSlotMorph(),
         new RingReporterSlotMorph(true)
     ];
-*/
+
 };
 
 
