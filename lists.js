@@ -66,6 +66,7 @@ modules.lists = '2017-January-31';
 
 var List;
 var ListWatcherMorph;
+var Tuple;
 
 // List ////////////////////////////////////////////////////////////////
 
@@ -913,4 +914,21 @@ ListWatcherMorph.prototype.show = function () {
 ListWatcherMorph.prototype.drawNew = function () {
     WatcherMorph.prototype.drawNew.call(this);
     this.fixLayout();
+};
+
+Tuple.prototype = new List();
+Tuple.prototype.constructor = Tuple;
+Tuple.uber = List.prototype;
+function Tuple(array) {
+    this.init(array);
+};
+Tuple.prototype.init = function (array) {
+    this.contents = array || [];
+    this.first = null;
+    this.rest = null;
+    this.isLinked = false;
+    this.lastChanged = Date.now();
+    this.add = this.remove = this.put = this.clear = function () {
+        throw new Error('tuples cannot be changed');
+    };
 };
