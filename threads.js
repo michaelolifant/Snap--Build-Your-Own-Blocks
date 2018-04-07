@@ -2548,7 +2548,7 @@ Process.prototype.reportEquals = function (a, b) {
 Process.prototype.reportIsIdentical = function (a, b) {
     var tag = 'idTag';
     if (this.isImmutable(a) || this.isImmutable(b)) {
-        return snapEquals(a, b);
+        return a == b;
     }
 
     function clear() {
